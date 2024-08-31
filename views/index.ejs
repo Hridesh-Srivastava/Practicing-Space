@@ -4,24 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles/style1.css">
 </head>
 <body>
+    <h1>Find out the total length of your name below:</h1>
     <% if(locals.key1){ %>
-        <h1> <%= key1 %> </h1> 
+        <h2 style="text-decoration:underline;"> <%= key1 %> </h2> 
    <% } else{ %>
-        <h1> Bad request! </h1>
+        <h2> Bad request! </h2>
   <% } %>
-   
+
+   <script>
+
+    document.getElementById("btn").classList.add("buttons");
+    setTimeout(() => {
+        document.getElementById("btn").classList.remove("buttons"); 
+    },100);
+
+   </script>
 
     <form action="/submit" method="POST">
-        <input type="text" name="first" placeholder="enter here..." required>
+        <input type="text" name="first" placeholder="enter first here..." required>
         <br>
-        <input type="text" name="last" placeholder="enter here..." required>
+        <br>
+        <input type="text" name="last" placeholder="enter last here..." required>
+        <br>
         <br>
         <textarea name="texts" placeholder="type your message here..." required></textarea>
         <br>
-        <input type="submit" value="Generate &rarr;">
+        <br>
+        <input id="btn" style="width:10%;border-radius:4%;background-color:rgb(195, 63, 89);" type="submit" value="Generate &rarr;">
 
     </form>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <%- include("partials/footer.ejs") %>
 </body>
 </html>
